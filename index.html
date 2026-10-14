@@ -3,52 +3,68 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Maamoun Sahyoun - Fusion Energy & Plasma Physics</title>
+<title>Maamoun Sahyoun | Fusion Energy Researcher</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
+:root{--bg:#070a14;--card:#11162a;--card2:#151d36;--border:#1e2a4d;--text:#eef1f8;--muted:#8a9ac1;--accent:#4f7cff}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:sans-serif;background:#0a0e1a;color:#e6e8ec;line-height:1.6}
-.container{max-width:900px;margin:0 auto;padding:20px}
-header{text-align:center;padding:60px 20px;background:linear-gradient(135deg,#0a0e1a,#1a2340);border-bottom:1px solid #1f2a4a}
-h1{font-size:2.5rem;color:#fff}
-.subtitle{color:#8b9cc7;font-size:1.15rem;margin:10px 0 25px}
-.badge{display:inline-block;background:#1e3a8a;color:#93c5fd;padding:6px 14px;border-radius:20px;font-size:0.85rem;margin:4px;border:1px solid #2a4a9a}
-.links{margin-top:25px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.btn{display:inline-flex;gap:8px;padding:12px 22px;border-radius:10px;text-decoration:none;font-weight:600}
-.btn-primary{background:#3b82f6;color:white}
-.btn-dark{background:#1f2a4a;color:#c7d2fe;border:1px solid #2a3a6a}
-.card{background:#11182e;border:1px solid #1f2a4a;border-radius:16px;padding:28px;margin:24px 0}
-.zenodo-box{background:linear-gradient(135deg,#1e3a8a,#1e40af);border:1px solid #3b82f6;border-radius:12px;padding:20px;margin-top:18px}
-.zenodo-url{font-family:monospace;font-size:0.85rem;color:#93c5fd;word-break:break-all;margin-top:8px}
-.interest{background:#1a2340;border:1px solid #2a3a6a;color:#a5b4d4;padding:6px 12px;border-radius:8px;font-size:0.85rem;margin:4px;display:inline-block}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
+a{color:var(--accent);text-decoration:none}
+.container{max-width:1050px;margin:0 auto;padding:0 24px}
+.nav{position:sticky;top:0;z-index:10;background:rgba(7,10,20,.8);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.nav-inner{display:flex;justify-content:space-between;align-items:center;height:64px;max-width:1050px;margin:0 auto;padding:0 24px}
+.nav-logo{font-weight:700}
+.nav-links{display:flex;gap:22px;font-size:.9rem}
+.nav-links a{color:var(--muted);font-weight:500}
+.hero{padding:80px 0 40px;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+@media(max-width:800px){.hero{grid-template-columns:1fr;padding:50px 0 30px}}
+.hero h1{font-size:clamp(2.2rem,5vw,3.2rem);line-height:1.05;letter-spacing:-.04em;margin-bottom:12px}
+.hero .role{font-size:1.15rem;color:var(--accent);font-weight:600;margin-bottom:16px}
+.hero p{color:var(--muted);font-size:1.02rem;max-width:520px;margin-bottom:24px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.tag{font-size:.78rem;padding:6px 12px;border-radius:999px;background:var(--card);border:1px solid var(--border);color:var(--muted)}
+.btn-row{display:flex;flex-wrap:wrap;gap:10px}
+.btn{padding:11px 18px;border-radius:10px;font-weight:600;font-size:.92rem;display:inline-flex;gap:8px;border:1px solid transparent}
+.btn-primary{background:var(--accent);color:white}
+.btn-ghost{background:var(--card);border-color:var(--border);color:var(--text)}
+.stats-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:22px}
+.stat{padding:14px 0;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+.stat:last-child{border:0}
+.stat-label{font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.stat-value{font-size:1.1rem;font-weight:600}
+.badge-live{display:inline-flex;align-items:center;gap:6px;background:#0f2a1a;border:1px solid #1a5a2e;color:#6ee7a0;padding:4px 10px;border-radius:999px;font-size:.75rem;font-weight:600}
+.section{padding:44px 0}
+.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:22px}
+.section-head h2{font-size:1.5rem}
+.pub-grid{display:grid;gap:16px}
+.pub{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px}
+.pub-badge{display:inline-flex;font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 8px;border-radius:6px;background:#1c2a5a;color:#8fb0ff;margin-bottom:10px;border:1px solid #2a3f7a}
+.pub-title{font-size:1.08rem;font-weight:600;line-height:1.35;margin-bottom:8px}
+.pub-meta{font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--muted);margin-bottom:12px}
+.pub-abstract{color:#b4bfd8;font-size:.92rem;margin-bottom:16px}
+.pub-actions{display:flex;flex-wrap:wrap;gap:8px}
+.mini-btn{font-size:.82rem;padding:7px 12px;border-radius:8px;background:#151d36;border:1px solid var(--border);color:var(--text);font-weight:500}
+.mini-btn.primary{background:var(--accent);border-color:var(--accent);color:white}
+footer{padding:40px 0;border-top:1px solid var(--border);margin-top:40px;color:var(--muted);font-size:.85rem;text-align:center}
 </style>
 </head>
 <body>
-<header>
-<h1>Maamoun Sahyoun</h1>
-<p class="subtitle">Independent Researcher — Fusion Energy & Plasma Physics</p>
-<div><span class="badge">Nuclear Fusion</span><span class="badge">Plasma Physics</span><span class="badge">AGI Stability</span><span class="badge">Invariant Theory</span></div>
-<div class="links">
-<a class="btn btn-primary" href="https://zenodo.org/records/18344323" target="_blank">📄 Read Full Paper on Zenodo</a>
-<a class="btn btn-dark" href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank">🎓 Google Scholar</a>
-</div>
-</header>
+<div class="nav"><div class="nav-inner"><div class="nav-logo">Maamoun Sahyoun</div><div class="nav-links"><a href="#pubs">Publications</a><a href="https://scholar.google.com/" target="_blank">Scholar</a><a href="https://zenodo.org/records/23303462" target="_blank">Zenodo</a></div></div></div>
+
 <div class="container">
-<div class="card">
-<h2>📚 Featured Publication</h2>
-<div style="font-size:1.15rem;color:#dbeafe;font-weight:600;margin-bottom:10px">The Sahyoun Invariant (C): A Universal Grand Unified Theory for Structural Topology, AGI Stability, and Fusion Physics</div>
-<div style="color:#8b9cc7;font-size:0.9rem;margin-bottom:16px">Maamoun Sahyoun — Zenodo — Jan 23, 2026 — DOI: 10.5281/zenodo.18344323</div>
-<div class="zenodo-box">
-<a href="https://zenodo.org/records/18344323" target="_blank" style="color:white;text-decoration:none;display:flex;justify-content:space-between">
-<div><div style="font-weight:700">🔗 Open on Zenodo — Full Text & DOI</div><div class="zenodo-url">https://zenodo.org/records/18344323</div></div><div style="font-size:1.8rem">→</div>
-</a>
-</div>
-<div style="margin-top:16px">
-<a class="btn btn-dark" href="https://doi.org/10.5281/zenodo.18344323" target="_blank">DOI: 10.5281/zenodo.18344323</a>
-<a class="btn btn-dark" href="https://zenodo.org/records/18344323/files/The%20Sahyoun%20Invariant%20(C)%20A%20Universal%20Grand%20Unified%20Theory%20for%20Structural%20Topology,%20AGI%20Stability,%20and%20Fusion%20Physics.pdf?download=1" target="_blank">⬇️ Download PDF</a>
+<div class="hero">
+<div>
+<h1>Maamoun<br>Sahyoun</h1>
+<div class="role">Independent Researcher — Fusion Energy & Plasma Physics</div>
+<p>Invariant theory, plasma confinement & AGI stability. Tripoli, Lebanon. Open research via Zenodo with DOI versioning.</p>
+<div class="tags"><span class="tag">Nuclear Fusion</span><span class="tag">Plasma Physics</span><span class="tag">Tokamak</span><span class="tag">Sahyoun Invariant (C)</span><span class="tag">AGI Stability</span></div>
+<div class="btn-row">
+<a class="btn btn-primary" href="https://zenodo.org/records/23303462" target="_blank">📄 Read Latest v4 on Zenodo</a>
+<a class="btn btn-ghost" href="#pubs">View publications ↓</a>
 </div>
 </div>
-<div class="card"><h2>🎯 Research Interests</h2><div><span class="interest">Nuclear Fusion</span><span class="interest">Plasma Physics</span><span class="interest">Tokamak</span><span class="interest">Artificial Intelligence</span><span class="interest">Invariant Theory</span><span class="interest">Structural Topology</span><span class="interest">AGI Stability</span></div></div>
-<div class="card"><h2>📍 Contact</h2><p style="color:#8b9cc7">Tripoli, Lebanon — Homepage verified on Google Scholar: maamounsahyoun-researcher.github.io</p></div>
-</div>
-</body>
-  </html>
+<div class="stats-card">
+<div class="stat"><div><div class="stat-label">Total Views</div><div class="stat-value">137 👁️</div></div><span class="badge-live">● Live on Zenodo</span></div>
+<div class="stat"><div class="stat-label">Total Downloads</div><div class="stat-value">99 ⬇️</div></div>
+<div class="stat"><div class="stat-label">Latest Version</div><div class="stat-value" style="font-size:.9rem">v4 — Oct 11, 2026</div></div>
+<div class="stat"><div class="stat-label">Concept DOI (All versions)</div><div class="stat-value" style="font-size:.75rem;font-family:'
